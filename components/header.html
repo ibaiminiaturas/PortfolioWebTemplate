@@ -1,0 +1,72 @@
+<header class="bg-gray-200 sticky top-0 z-50 h-36 flex items-center px-6">
+  
+  <div class="hidden lg:flex w-full items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img id="header-logo" alt="Logo" class="h-20 w-20 rounded-full">
+      <span class="text-3xl font-bold text-gray-800">Your awesome name</span>
+    </div>
+
+    <ul class="absolute left-1/2 -translate-x-1/2 flex space-x-16 items-center text-2xl font-semibold text-gray-800">
+      <li><a href="./" class="hover:text-gray-400 transition-colors" data-i18n="header.menu.home"></a></li>
+      <li class="relative" id="menu-galerias">
+        <span class="cursor-default hover:text-gray-400" data-i18n="header.menu.gallery"></span>
+        <div id="dropdown-galerias" class="absolute hidden bg-gray-800 mt-2 rounded w-max text-white shadow-xl"></div>
+      </li>
+      <li><a href="./about.html" class="hover:text-gray-400 transition-colors" data-i18n="header.menu.about"></a></li>
+      <li><a href="./contact.html" class="hover:text-gray-400 transition-colors" data-i18n="header.menu.contact"></a></li>
+    </ul>
+
+    <div class="flex items-center gap-6">
+      <div class="flex gap-3">
+        <img id="flag-es" class="h-8 w-10 cursor-pointer hover:opacity-70" onclick="loadLanguage('es');">
+        <img id="flag-uk" class="h-8 w-10 cursor-pointer hover:opacity-70" onclick="loadLanguage('en');">
+      </div>
+      <a href="https://www.instagram.com/yourinstagramaccount" target="_blank" class="hover:opacity-70">
+        <img id="ig-icon" class="h-12 w-12">
+      </a>
+    </div>
+  </div>
+
+  <div class="flex lg:hidden w-full items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img id="header-logo-mobile" alt="Logo" class="h-16 w-16 rounded-full">
+      <span class="text-xl font-bold text-gray-800">your awesome name</span>
+    </div>
+
+    <button id="btn-hamburguesa" class="p-2 focus:outline-none">
+      <div class="space-y-1.5">
+        <span class="block w-8 h-1 bg-gray-800"></span>
+        <span class="block w-8 h-1 bg-gray-800"></span>
+        <span class="block w-8 h-1 bg-gray-800"></span>
+      </div>
+    </button>
+  </div>
+
+<nav id="menu-movil" class="hidden fixed top-36 left-0 w-full bg-gray-200 border-t border-gray-300 flex-col p-8 space-y-6 text-2xl font-semibold text-gray-800 shadow-2xl h-[calc(100vh-144px)] overflow-y-auto z-50">
+
+    <a href="./" class="block border-b border-gray-300 pb-2" data-i18n="header.menu.home"></a>
+    
+    <div id="mobile-menu-galerias" class="w-full">
+      <div class="flex justify-between items-center cursor-pointer border-b border-gray-300 pb-2" id="btn-toggle-galerias-mobile">
+        <span data-i18n="header.menu.gallery"></span>
+        <span class="text-xl transition-transform duration-300" id="arrow-galerias">▼</span>
+      </div>
+      <div id="mobile-dropdown-galerias" class="hidden flex-col ml-6 mt-4 space-y-4 border-l-4 border-gray-400 pl-4 text-xl font-medium text-gray-600">
+      </div>
+    </div>
+
+    <a href="./about.html" class="block border-b border-gray-300 pb-2" data-i18n="header.menu.about"></a>
+    <a href="./contact.html" class="block border-b border-gray-300 pb-2" data-i18n="header.menu.contact"></a>
+    
+    <div class="flex flex-col items-center gap-8 pt-6">
+      <div class="flex gap-10">
+        <img id="flag-es-mobile" class="h-10 w-14 cursor-pointer" onclick="loadLanguage('es');">
+        <img id="flag-en-mobile" class="h-10 w-14 cursor-pointer" onclick="loadLanguage('en');">
+      </div>
+      <a href="https://www.instagram.com/yourinstagramaccount" target="_blank">
+        <img id="ig-icon-mobile" class="h-14 w-14">
+      </a>
+    </div>
+</nav>
+
+</header>

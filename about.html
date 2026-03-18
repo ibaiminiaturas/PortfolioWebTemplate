@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí | Portfolio de Miniaturas</title>
+<script src="assets/js/config.js"></script> <!-- define BASE_PATH -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/utils.js"></script>
+<style>
+body {
+  margin:0;
+  overflow-x:hidden;
+  font-family:'Montserrat',sans-serif;
+  background-color:#f3f4f6;
+}
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<header id="main-header" class="sticky top-0 z-50 bg-white"></header>
+
+<script>
+fetch(`${BASE_PATH}/components/header.html`)
+.then(res=>res.text())
+.then(html=>{
+  const header=document.getElementById('main-header');
+  header.innerHTML=html;
+      loadLanguage(currentLang);
+          loadHeader("");
+  header.style.transition='box-shadow 0.3s ease';
+  window.addEventListener('scroll',()=>{
+    header.style.boxShadow=window.scrollY>10?'0 2px 8px rgba(0,0,0,0.1)':'none';
+  });
+
+  const script=document.createElement('script');
+  script.src=`${BASE_PATH}/assets/js/menu.js`;
+  document.body.appendChild(script);
+});
+</script>
+
+<main class="max-w-7xl mx-auto px-4 py-12 space-y-24">
+
+<!-- HERO -->
+<section class="text-center mb-16">
+<h1 class="text-6xl md:text-7xl font-extrabold text-gray-900 leading-tight"  data-i18n="about.hero.title">
+</h1>
+
+<p class="mt-6 text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto"  data-i18n="about.hero.subtitle">
+
+</p>
+</section>
+
+
+<!-- HISTORIA -->
+<section class="flex flex-col md:flex-row items-center gap-10">
+
+<img src="assets/images/about1.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg">
+
+<div class="md:w-1/2 space-y-6">
+
+<h2 class="text-4xl font-extrabold text-gray-800" data-i18n="about.history.title">
+
+</h2>
+
+<p class="text-gray-700 text-lg"  data-i18n="about.history.p1">
+</p>
+
+<p class="text-gray-700 text-lg"  data-i18n="about.history.p2">
+</p>
+
+<p class="text-gray-700 text-lg"   data-i18n="about.history.p3">
+</p>
+
+<p class="text-gray-600 italic"   data-i18n="about.history.p4">
+</p>
+
+</div>
+</section>
+
+
+<!-- EL PROCESO -->
+<section class="flex flex-col md:flex-row-reverse items-center gap-10">
+
+<img src="assets/images/about2.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg">
+
+<div class="md:w-1/2 space-y-6">
+
+<h2 class="text-3xl font-bold text-gray-800" data-i18n="about.process.title">
+
+</h2>
+
+<p class="text-gray-700 text-lg" data-i18n="about.process.p1">
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.process.p2">
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.process.p3">
+</p>
+
+<p class="text-gray-600" data-i18n="about.process.p4">
+</p>
+
+</div>
+</section>
+
+
+<!-- FILOSOFIA -->
+<section class="space-y-10 text-center">
+
+<h2 class="text-3xl font-bold text-gray-800" data-i18n="about.philosophy.title">
+</h2>
+
+<p class="text-gray-700 text-lg max-w-4xl mx-auto" data-i18n="about.philosophy.p1">
+</p>
+
+<p class="text-gray-700 text-lg max-w-4xl mx-auto" data-i18n="about.philosophy.p2">
+</p>
+
+<p class="text-gray-700 text-lg max-w-4xl mx-auto" data-i18n="about.philosophy.p3">
+</p>
+
+</section>
+
+
+<!-- COMUNIDAD -->
+<section class="bg-white p-10 rounded-xl shadow-lg space-y-8">
+
+<h2 class="text-3xl font-bold text-gray-800 text-center" data-i18n="about.community.title">
+</h2>
+
+<p class="text-gray-700 text-lg" data-i18n="about.community.p1">
+</p>
+
+<p class="text-gray-700 text-lg"  data-i18n="about.community.p2">
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.community.p3" >
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.community.p4">
+</p>
+
+</section>
+
+
+<!-- ENSEÑAR -->
+<section class="flex flex-col md:flex-row items-center gap-10">
+
+<img src="assets/images/about3.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg">
+
+<div class="md:w-1/2 space-y-6">
+
+<h2 class="text-3xl font-bold text-gray-800" data-i18n="about.teaching.title">
+</h2>
+
+<p class="text-gray-700 text-lg" data-i18n="about.teaching.p1">
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.teaching.p2 ">
+</p>
+
+<p class="text-gray-700 text-lg" data-i18n="about.teaching.p3">
+</p>
+
+</div>
+</section>
+
+
+<!-- CIERRE -->
+<section class="bg-yellow-50 p-10 rounded-xl shadow-lg text-center space-y-6">
+
+<h2 class="text-3xl font-bold text-gray-800" data-i18n="about.closure.title">
+</h2>
+
+<p class="text-gray-700 text-lg max-w-3xl mx-auto" data-i18n="about.closure.p1">
+</p>
+
+<p class="text-gray-700 text-lg max-w-3xl mx-auto" data-i18n="about.closure.p2">
+</p>
+
+<p class="text-gray-600 italic" data-i18n="about.closure.p3">
+</p>
+
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+fetch(`${BASE_PATH}/components/footer.html`)
+.then(res=>res.text())
+.then(html=>{
+document.getElementById('footer-placeholder').innerHTML=html;
+
+});
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "category": "Gallery-A",
+    "folder": "Gallery-A",
+    "items": [
+      {
+        "name": "Sub-Gallery-B",
+        "displayName": "Sub-Gallery-B",
+        "images": 2,
+        "subs": [
+          {
+            "name": "Sub-Sub-gallery-C",
+            "displayName": "Sub-Sub-gallery-C",
+            "images": 2
+          }
+        ]
+      }
+    ]
+  }
+]

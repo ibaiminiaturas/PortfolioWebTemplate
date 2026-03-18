@@ -1,0 +1,260 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* style.css */
+.carrusel-titulo {
+  color: #6d6e71; /* gris claro, equivalente a Tailwind gray-300 */
+  font-size: 2rem; /* o 4xl si quieres */
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #f3f4f6; /* Tailwind bg-gray-100 */
+}
+
+/* Opcional: títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* un poco más bold para títulos */
+}
+/* Animaciones */
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+@keyframes zoomOut {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+
+#lightbox-prev,
+#lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  z-index: 100;
+}
+
+/* Galería */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cabecera full width */
+.header-full {
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  height: 6rem; /* 24*2 = 48px aprox */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 1rem;
+}
+.header-logo img {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+}
+.header-logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1F2937; /* gray-800 */
+}
+
+/* Menú centrado */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.nav-center a {
+  color: #1F2937; /* gris oscuro para links */
+  transition: color 0.2s;
+}
+.nav-center a:hover {
+  color: #9CA3AF; /* gris más claro en hover */
+}
+
+/* Dropdown */
+#dropdown-galerias {
+  position: absolute;
+
+  background: #1F2937; /* bg-gray-800 */
+  margin-top: 0.5rem;
+  border-radius: 0.25rem;
+  min-width: max-content;
+  color: white;
+}
+#dropdown-galerias a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+
+/* Icono Instagram a la derecha */
+.header-instagram {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  align-items: center;
+}
+.header-instagram img {
+  height: 2.5rem;
+  width: 2.5rem;
+  transition: opacity 0.2s;
+}
+.header-instagram img:hover {
+  opacity: 0.7;
+}
+/* Efecto hover en las imágenes del carrusel */
+.carrusel-img {
+  transition: transform 0.5s ease;
+}
+
+.carrusel-img:hover {
+  transform: scale(0.95);
+}
+
+.instagram-white {
+  filter: brightness(0) invert(1);
+}
+
+/* style.css */
+
+/* --- Body --- */
+/* body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+
+  background: repeating-linear-gradient(
+    135deg,
+    #898d96 0px,
+    #82869d 90px,
+    #7b80a3 180px,
+    #82869d 270px,
+    #898d96 360px
+  );
+} */
+
+/* body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2P4z/C/HwAGgwJ/lBzKXwAAAABJRU5ErkJggg==");
+  opacity: 0.05;
+  z-index: -1;
+} */
+
+/* --- Scrollbar hide --- */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- Lightbox --- */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding-top: var(--header-height, 0);
+  padding-bottom: 0px;
+  box-sizing: border-box;
+}
+
+#lightbox-img {
+  max-height: calc(100vh - var(--header-height, 0) - 80px);
+  max-width: 90vw;
+  border-radius: 8px;
+  transition: opacity 0.5s ease;
+}
+#lightbox-prev, #lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  z-index: 100;
+}
+
+/* --- Galería --- */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hover efecto carrusel */
+.carrusel-img {
+  transition: transform 0.5s ease;
+}
+.carrusel-img:hover {
+  transform: scale(0.95);
+}
+
+#lightbox-prev, #lightbox-next {
+    transition: left 0.3s ease, top 0.3s ease, opacity 0.2s ease;
+    opacity: 1; 
+    position: fixed;
+    z-index: 100;
+    pointer-events: auto;
+}
