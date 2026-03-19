@@ -4,8 +4,8 @@ const BASE_PATH = (function() {
 
   const isGithub = location.hostname.includes("github.io");
   if (isGithub) {
-    // Ajusta 'portfolio' al nombre de tu repo en GitHub
-    return "/portfolio";
+    // adjust 'PortfolioWebTemplate' to the name of your portfolio
+    return "/PortfolioWebTemplate";
   } else {
     return ""; // local
   }
