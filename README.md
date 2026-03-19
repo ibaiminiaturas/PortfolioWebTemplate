@@ -7,16 +7,58 @@ Managed entirely via **JSON configuration**, this template allows you to showcas
 
 > [!IMPORTANT]
 > **Super Important:** This website is designed to be hosted on your own **GitHub account** (which is free). Forget about expensive monthly hosting fees!
-
 * **100% Free Hosting:** By using **GitHub Pages**, you get professional-grade hosting for $0/month.
 * **Custom Domain:** Your only potential cost is a custom domain (e.g., `www.yourname.com`). This usually costs around **10€ per year** at any registrar. That's it. No other hidden fees.
 * **Automatic Deploys:** Every time you upload a new photo to your repository or edit the `config.json`, the website **updates itself automatically** in seconds. 
 * **Zero Maintenance:** No databases to manage, no WordPress plugins to update, and no server headaches. It just stays online, fast and secure.
 
 > [!IMPORTANT]
-you will have to install all the NPM machinery and shenanigans
 
-on A terminal of VS CODE on the project folder type "npm install". If errors are shown you can contact me at ibaiminiaturas@gmail.com or try to use AI, Use gemini AI is much much better than Chatgpt for this kind of stuff
+First steps:
+
+## 🚀 STEP 1: Create Your Own Copy (Template)
+No need to download anything to your computer. Everything happens right here.
+
+1. Log in to your **GitHub** account. Create one uf you don't have one.
+2. At the top right, look for the green button that says **"Use this template"**.
+3. Click on **"Create a new repository"**.
+4. Give it any name you like (e.g., `my-mini-collection`) and click **"Create repository"**.
+
+
+## 🌐 STEP 2: Bring Your Website to Life!
+Let's give your gallery a public URL so everyone can see it.
+
+1. Inside **YOUR** new repository, go to the ⚙️ **Settings** tab (in the top menu).
+2. On the left sidebar, find and click on **Pages**.
+3. Under **Branch**, click the dropdown that says `None` and select `master`.
+4. Click the **Save** button.
+5. Done! A message will appear at the top with your new web address (it might take a minute to load for the first time). Reload if does not appear.
+
+## 📸 STEP 3: Upload Your Photos (Check also next points and come back when you read all the document)
+Got new minis? Upload them directly through your browser.
+
+1. Navigate to the folder `galleries/data/`.
+2. Click the **Add file** button > **Upload files**.
+3. Drag and drop your photos there and click **Commit changes**.
+   * *Pro Tip: Try to keep filenames simple with no spaces (use hyphens like `my-miniature-01.jpg`).*
+
+## 📝 STEP 4: Update the List (The JSON)
+For the website to "see" your new photos, you need to add them to the config file.
+
+1. Open the file `galeries.json`.
+2. Click the **pencil icon (Edit this file)**.
+3. Add your new categories or photo names following the existing format.
+4. Click the green **Commit changes** button.
+
+---
+
+## 🔥 NINJA TRICK: The Visual Editor
+If you want to edit the JSON or organize files more comfortably:
+1. While on your repository's main page, press the **period key (`.`)** on your keyboard.
+2. A full **Visual Studio Code editor will open in your browser**. It's much easier for typing and organizing.
+3. Once finished, save your changes using the "Source Control" icon on the left (the one with the three branches).
+
+
 
 ### 📁 Project Structure
 - `/assets/config.json` -> ⚙️ Your main info (Email, Formspree).
@@ -35,6 +77,13 @@ Open `assets/config.json` and fill in your personal details. This file controls 
 {
   "formspree_url": "[https://formspree.io/f/yourid](https://formspree.io/f/yourid)",
 }
+
+Open `assets/js/config.js` and change the following line:
+
+    return "/portfolio";
+
+instead of "/portfolio" type "/THE_NAME_OF_YOUR_REPO"
+Have in mind that "THE_NAME_OF_YOUR_REPO" is the name you gave to your repository when you applied the template on github.
 
 ### 2. Social Links & Logo
 
