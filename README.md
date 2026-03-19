@@ -1,4 +1,4 @@
-# 🎨 Miniature Painter Portfolio Template
+# 🎨 Miniature Painter Portfolio Template  
 > **The "Lazy Painter" Web Solution.** A high-performance, easy-to-customize portfolio designed for the hobby community.
 
 Managed entirely via **JSON configuration**, this template allows you to showcase your miniatures without touching complex HTML or JavaScript.
@@ -72,13 +72,16 @@ If you want to edit the JSON or organize files more comfortably:
 You don't need to be a developer. Just follow these 3 steps:
 
 ### 1. Global Configuration
-Open `assets/config.json` and fill in your personal details. This file controls your brand, social media, and contact links globally.
+
+##Open `assets/config.json` and fill in your personal details. This file controls your brand, social media, and contact links globally.
 ```json
 {
-  "formspree_url": "[https://formspree.io/f/yourid](https://formspree.io/f/yourid)",
+   "email_service_url": "https://formspree.io/f/xaqpelyo"
 }
+```
 
-Open `assets/js/config.js` and change the following line:
+
+## Open `assets/js/config.js` and change the following line:
 
     return "/portfolio";
 
@@ -89,22 +92,30 @@ Have in mind that "THE_NAME_OF_YOUR_REPO" is the name you gave to your repositor
 
 Since we are keeping it simple with direct links, you can find the Social Media icons and the Logo in the Header/Footer files:
 
-    Logo & Links: Open components/header.html or components/footer.html to change your Instagram/Facebook URLs directly in the <a> tags.
+## Logo & Links: Open components/header.html or components/footer.html to change your Instagram/Facebook URLs directly in the <a> tags.
+
 Footer:
+```
   <img src="assets/images/YOUR_LOGO_FILE" alt="Logo" class="h-20 w-20 rounded-full">
   <a href="https://www.instagram.com/YOUR_INSTAGRAM_NAME">
   <a href="mailto:YOUR_EMAIL_ADDRESS" class="hover:underline">YOUR_EMAIL_ADDRESS</a>
+```
+
 Header:
+```
   <a href="https://www.instagram.com/YOUR_INSTAGRAM_NAME" target="_blank" class="hover:opacity-70">
   <a href="https://www.instagram.com/YOUR_INSTAGRAM_NAME" target="_blank">
+```
 
 in uitls.js:
+```
         const images = [
             { id: 'header-logo', path: 'assets/images/YOUR_HEADER_LOGO' },
             { id: 'header-logo-mobile', path: 'assets/images/YOUR_HEADER_LOGO_FOR_MOBILE' },
             { id: 'flag-es', path: 'assets/images/YOUR_LANGUAGE_FLAG' },
             { id: 'flag-es-mobile', path: 'assets/images/YOUR_LANGUAGE_FLAG_FOR_MOBILE' },
         ];
+```
 
 ### 3. Multi-language Support
 
@@ -113,56 +124,33 @@ For the galeries they have to be named exactly like the ones on the gallery syst
 
 📸 How the Gallery Works
 
-The galleries info is in the galleries.json, here is a sample json:
-
+The galleries info is in the galleries.json, here is the sample json:
+```
 [
   {
-    "category": "Box Arts",     //Level 1 gallery
-    "folder": "Box Arts", //Folder name for the gallery in the assets/galleries/data path
-    "items": [     //subgaleries of this main gallery
+    "category": "Gallery-A",
+    "folder": "Gallery-A",
+    "items": [
       {
-        "name": "Big Child", //name of the sub folder in the assets/galleries/data/Box Arts path
-        "displayName": "Big Child Studios", //not used right no. 
-        "subs": [            //subgaleries in the gallery "Big CHild" 
+        "name": "Sub-Gallery-B",
+        "displayName": "Sub-Gallery-B",
+        "images": 2,
+        "subs": [
           {
-            "name": "marvel-united",  //name of the sub folder in the assets/galleries/data/Box Arts/Big Child path
-            "displayName": "Marvel United",
-            "images": 6 //number of images in the gallery
-          },
-          {
-            "name": "game-of-thrones",   //name of the sub folder in the assets/galleries/data/Box Arts/Big Child path path
-            "displayName": "A Song of Ice and Fire",
-            "images": 12,
-            "subs": [
-              {
-                "name": "stark-army", //name of the sub folder in the assets/galleries/data/Box Arts/Big Child/game-of-thrones path
-                "displayName": "House Stark",
-                "images": 5
-              }
-            ]
+            "name": "Sub-Sub-gallery-C",
+            "displayName": "Sub-Sub-gallery-C",
+            "images": 2
           }
         ]
-      },
-      {
-        "name": "aradia-miniatures",
-        "displayName": "Aradia Miniatures",
-        "images": 15
-        // Esto será un MOSAICO directo dentro de la categoría Box Arts.
       }
     ]
-  },
-  {
-    "category": "Personal Projects",
-    "folder": "personal",
-    "images": 8,
-    "displayName": "Mis Proyectos Propios"
-    // Mosaico puro.
   }
 ]
-
+```
 You can copy and paste this example into https://jsoneditoronline.org/ to see the structure.
 
 The system is "smart". It decides how to display your work based on how you nest your data in galeries.json:
+
 🔹 Mosaic Mode (Detail View)
 
 If a category has images but no sub-items, the website will display a beautiful full-width mosaic. Ideal for showing every detail of a specific project.
@@ -187,14 +175,15 @@ To keep it simple, your images must follow this pattern inside /galleries/data/[
 
 We can have galleries inside galleries so the name would change acordingly. Example:
 
-assets/galleries/data/Box Arts/Big Child/game-of-thrones
+```assets/galleries/data/Box Arts/Big Child/game-of-thrones```
 
 in this filder there would be
 
+```
 game-of-thrones-1.webp
 
 game-of-thrones-2.webp
-
+```
 ...and so on
 
 🛠 Tech Stack
